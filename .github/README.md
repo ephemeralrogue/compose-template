@@ -20,7 +20,11 @@
 
 ## the quick and dirty
 
-compose template includes workflows to run a security scan and linter on push. Check the docs on each to make your own modifications:
+compose template includes workflows to run a security scan and linter on push. 
+Check the docs on each to make your own modifications:
 
 - [KICS](https://github.com/Checkmarx/kics)
 - [DCLint](https://github.com/zavoloklom/docker-compose-linter)
+
+a template systemd service file is included to run a compose file as a systemd 
+service. see `systemd/README.md` for details.
