@@ -1,0 +1,20 @@
+[Unit]
+Description=Enter Application Name Here
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+
+# systemd uses absolute paths.
+# set the path to your compose.yaml
+WorkingDirectory= # path to compose file directory
+ExecStart=docker compose up -d # alternatively, add the path to your docker-compose binary
+ExecStop=docker compose down # alternatively, add the path to your docker-compose binary
+KillMode=process
+# set your own restart behavior
+Restart=no
+
+[Install]
+WantedBy=default.target # or multi-user.target
